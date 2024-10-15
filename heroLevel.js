@@ -1,23 +1,23 @@
-let heroName = 'Hero Man'
-let heroXp = 8030
-let heroRank
+function rank(vitorias, derrotas){
+    saldoVitorias = vitorias - derrotas
 
-if (heroXp < 1000){
-    heroRank = 'ferro'
-}else if (1001 <= heroXp && heroXp <= 2000){
-    heroRank = 'bronze'
-}else if (2001 <= heroXp && heroXp <= 5000){
-    heroRank = 'prata'
-}else if (5001 <= heroXp && heroXp <= 7000){
-    heroRank = 'ouro'
-}else if (7001 <= heroXp && heroXp <= 8000){
-    heroRank = 'platina'
-}else if (8001 <= heroXp && heroXp <= 9000){
-    heroRank = 'ascendente'
-}else if (9001 <= heroXp && heroXp <= 10000){
-    heroRank = 'imortal'
-}else{
-    heroRank = 'radiante'
+    if (saldoVitorias < 10){
+        nivel = 'ferro'
+    }else if (11 <= saldoVitorias && saldoVitorias <= 20){
+        nivel = 'bronze'
+    }else if (21 <= saldoVitorias && saldoVitorias <= 50){
+        nivel = 'prata'
+    }else if (51 <= saldoVitorias && saldoVitorias <= 80){
+        nivel = 'ouro'
+    }else if (81 <= saldoVitorias && saldoVitorias <= 90){
+        nivel = 'diamante'
+    }else if (91 <= saldoVitorias && saldoVitorias <= 100){
+        nivel = 'lendário'
+    }else{
+        nivel = 'imortal'
+    }
+
+    console.log(`O herói tem de saldo ${saldoVitorias} e está no nível de ${nivel} `)
 }
 
-console.log(`O herói ${heroName} está no rank ${heroRank}`)
+rank(100, 50);
